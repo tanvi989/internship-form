@@ -1,0 +1,26 @@
+-- CreateTable
+CREATE TABLE "InternshipApplication" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "phoneNumber" TEXT NOT NULL,
+    "educationYear" TEXT NOT NULL,
+    "collegeName" TEXT NOT NULL,
+    "courseDegreeName" TEXT NOT NULL,
+    "gender" TEXT NOT NULL,
+    "skills" TEXT NOT NULL,
+    "startAt7AM" BOOLEAN NOT NULL,
+    "punctuality" BOOLEAN NOT NULL,
+    "workMondayToSaturday" BOOLEAN NOT NULL,
+    "complete90Days" BOOLEAN NOT NULL,
+    "breakNotExceed1Hour" BOOLEAN NOT NULL,
+    "endOnMisbehavior" BOOLEAN NOT NULL,
+    "endOnNoOutput" BOOLEAN NOT NULL,
+    "officeCommuteTime" TEXT NOT NULL,
+    "strength" TEXT NOT NULL,
+    "weakness" TEXT NOT NULL,
+    "hobbies" TEXT NOT NULL,
+    "englishFluencyRating" INTEGER NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+);

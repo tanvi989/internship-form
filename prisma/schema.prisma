@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model InternshipApplication {
+  id                    String   @id @default(cuid())
+  name                  String   @db.VarChar(255)
+  email                 String   @db.VarChar(255)
+  phoneNumber           String   @db.VarChar(20)
+  educationYear         String   @db.VarChar(10)
+  collegeName           String   @db.VarChar(255)
+  courseDegreeName      String   @db.VarChar(255)
+  gender                String   @db.VarChar(20)
+  skills                String   @db.Text // JSON array stored as string
+  startAt7AM            Boolean  @default(false)
+  punctuality           Boolean  @default(false)
+  workMondayToSaturday  Boolean  @default(false)
+  complete90Days        Boolean  @default(false)
+  breakNotExceed1Hour   Boolean  @default(false)
+  endOnMisbehavior       Boolean  @default(false)
+  endOnNoOutput         Boolean  @default(false)
+  officeCommuteTime     String   @db.VarChar(50)
+  strength              String   @db.Text
+  weakness              String   @db.Text
+  hobbies               String   @db.Text
+  englishFluencyRating  Int      @default(5)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([email])
+  @@index([createdAt])
+  @@map("internship_applications")
+}
